@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mythmon - The Gods Have Awakened</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@400&family=Press+Start+2P&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="landing-active">
+    <!-- Immersive entry gate -->
+    <div id="landing-gate" class="landing-gate" aria-modal="true" role="dialog" aria-label="Enter Ancient Greece">
+        <div class="landing-gate__layers" aria-hidden="true">
+            <img class="landing-gate__img" src="landscape.jpg" alt="">
+            <video class="landing-gate__video" autoplay muted playsinline loop>
+                <source src="animate.mp4" type="video/mp4">
+            </video>
+            <div class="landing-gate__veil"></div>
+            <div class="landing-gate__gold-bloom"></div>
+            <div class="landing-gate__vignette"></div>
+            <div class="landing-gate__grain"></div>
+            <div class="landing-gate__scanlines"></div>
+        </div>
+        <div class="landing-gate__pillars" aria-hidden="true"></div>
+        <div class="landing-gate__content">
+            <p class="landing-gate__runes">Χαίρετε, μαθηταὶ τοῦ Βισόπτων καὶ Ῥεδμαρσάλου</p>
+            <button type="button" class="landing-gate__cta" id="landing-enter">
+                <span class="landing-gate__cta-inner">Enter Ancient Greece</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Global Elements -->
+    <div class="scroll-progress-container">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Section 1: Hero -->
+    <section id="hero" class="section-hero">
+        <div class="hero-bg" aria-hidden="true">
+            <img class="hero-bg-media" src="hero-sculpture.png" alt="" width="1024" height="576" decoding="async" fetchpriority="high">
+        </div>
+        <div class="hero-content">
+            <div class="hero-label">CLASSIFIED &mdash; ARCHAEOLOGICAL FIND &mdash; ATHENS 2026</div>
+            <h1 class="hero-title">MYTHMON</h1>
+            <h2 class="hero-subtitle">The gods have awakened.</h2>
+            <div class="hero-scroll-hint">SCROLL TO BEGIN</div>
+            <div class="hero-entry-line"></div>
+        </div>
+        <div class="hero-tail-gradient" aria-hidden="true"></div>
+    </section>
+
+    <!-- Section 2: The Discovery -->
+    <section id="discovery" class="section-discovery">
+        <!-- TODO: Replace background image with Midjourney url in CSS when ready -->
+        <div class="discovery-content">
+            <p class="discovery-text scroll-highlight">
+                In the spring of 2026, deep beneath the sacred rock of the Acropolis, archaeologists broke through a wall that had not been touched in two and a half thousand years. What they found inside changed everything.
+            </p>
+            <div class="discovery-label">ATHENS &mdash; CHAMBER 7 &mdash; MARCH 2026</div>
+        </div>
+    </section>
+
+    <!-- Section 3: The Artefact -->
+    <section id="artefact" class="section-artefact">
+        <div class="artefact-split">
+            <div class="artefact-left">
+                <div class="slide-text">
+                    <div class="artefact-label">THE ARTEFACT</div>
+                    <h2 class="artefact-heading">A Tablet of the Gods</h2>
+                    <p class="artefact-body scroll-highlight">Carved from a stone that matched no known geological formation on Earth. Inscribed with the names of gods, monsters, and heroes &mdash; every one of them surrounded by numbers. Measurements. Statistics. As if someone, thousands of years ago, had been keeping score.</p>
+                    <hr class="gold-rule">
+                    <p class="artefact-body scroll-highlight">When the tablet was brought into the light, the ground shook. The numbers began to glow. And across Greece, something ancient stirred.</p>
+                </div>
+            </div>
+            <div class="artefact-right">
+                <div class="tablet-visual">
+                    <img src="tablet.png" alt="Ancient Tablet of the Gods" class="ancient-tablet">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: The Unleashing -->
+    <section id="unleashing" class="section-unleashing">
+        <div class="sticky-container">
+            <!-- Panel A -->
+            <div class="panel panel-a">
+                <div class="panel-content">
+                    <h2 class="panel-heading">THE GODS</h2>
+                    <p class="panel-subheading">have left Olympus</p>
+                    <p class="panel-body">48 mythical beings &mdash; unleashed across the land of Greece</p>
+                </div>
+            </div>
+            <!-- Panel B -->
+            <div class="panel panel-b hidden">
+                <div class="panel-content">
+                    <h2 class="panel-heading">THE MONSTERS</h2>
+                    <p class="panel-subheading">stalk the ancient roads</p>
+                    <div class="marquee-track">
+                        <div class="marquee-content press-start">
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                            CERBERUS &middot; MEDUSA &middot; TYPHON &middot; HYDRA &middot; CHIMERA &middot; CYCLOPS &middot; MINOTAUR &middot; SCYLLA &middot; HARPY &middot; KRAKEN &middot; 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Panel C -->
+            <div class="panel panel-c hidden">
+                <div class="panel-content">
+                    <h2 class="panel-heading">THE HEROES</h2>
+                    <p class="panel-subheading">walk among us once more</p>
+                    <div class="marquee-track">
+                        <div class="marquee-content press-start">
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                            HERCULES &middot; ACHILLES &middot; ODYSSEUS &middot; PERSEUS &middot; THESEUS &middot; ATALANTA &middot; JASON &middot; BELLEROPHON &middot; ORION &middot; CHIRON &middot; 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Panel D -->
+            <div class="panel panel-d hidden">
+                <div class="panel-content">
+                    <h2 class="panel-heading gold-text">GREECE NEEDS YOU</h2>
+                    <p class="panel-subheading">500 Drachma. 4 slots. Choose wisely.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Character Parade -->
+    <section id="parade" class="section-parade">
+        <!-- TODO: Replace background image with Midjourney url in CSS when ready -->
+        <h2 class="parade-title scroll-highlight">THEY WALK AMONG US</h2>
+        <div class="parade-container">
+            <!-- Row 1: Gods and Goddesses -->
+            <div class="parade-row row-1">
+                <div class="parade-track">
+                    <div class="char-chip god"><span class="type-badge"></span>ZEUS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HERA</div>
+                    <div class="char-chip god"><span class="type-badge"></span>POSEIDON</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ATHENA</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ARES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>APOLLO</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ARTEMIS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HADES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>APHRODITE</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HEPHAESTUS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HERMES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>DIONYSUS</div>
+                    <!-- Duplicated for infinite scroll -->
+                    <div class="char-chip god"><span class="type-badge"></span>ZEUS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HERA</div>
+                    <div class="char-chip god"><span class="type-badge"></span>POSEIDON</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ATHENA</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ARES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>APOLLO</div>
+                    <div class="char-chip god"><span class="type-badge"></span>ARTEMIS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HADES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>APHRODITE</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HEPHAESTUS</div>
+                    <div class="char-chip god"><span class="type-badge"></span>HERMES</div>
+                    <div class="char-chip god"><span class="type-badge"></span>DIONYSUS</div>
+                </div>
+            </div>
+            <!-- Row 2: Heroes and Titans -->
+            <div class="parade-row row-2">
+                <div class="parade-track reverse">
+                    <div class="char-chip hero"><span class="type-badge"></span>HERCULES</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ACHILLES</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ODYSSEUS</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>CRONUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>PERSEUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>THESEUS</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>ATLAS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ATALANTA</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>JASON</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>PROMETHEUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>BELLEROPHON</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ORION</div>
+                    <!-- Duplicated for infinite scroll -->
+                    <div class="char-chip hero"><span class="type-badge"></span>HERCULES</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ACHILLES</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ODYSSEUS</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>CRONUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>PERSEUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>THESEUS</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>ATLAS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ATALANTA</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>JASON</div>
+                    <div class="char-chip titan"><span class="type-badge"></span>PROMETHEUS</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>BELLEROPHON</div>
+                    <div class="char-chip hero"><span class="type-badge"></span>ORION</div>
+                </div>
+            </div>
+            <!-- Row 3: Monsters and Beasts -->
+            <div class="parade-row row-3">
+                <div class="parade-track">
+                    <div class="char-chip monster"><span class="type-badge"></span>CERBERUS</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MEDUSA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>TYPHON</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>HYDRA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>CHIMERA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>CYCLOPS</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MINOTAUR</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>SCYLLA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>HARPY</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>KRAKEN</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>SPHINX</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MANTICORE</div>
+                    <!-- Duplicated for infinite scroll -->
+                    <div class="char-chip monster"><span class="type-badge"></span>CERBERUS</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MEDUSA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>TYPHON</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>HYDRA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>CHIMERA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>CYCLOPS</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MINOTAUR</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>SCYLLA</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>HARPY</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>KRAKEN</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>SPHINX</div>
+                    <div class="char-chip monster"><span class="type-badge"></span>MANTICORE</div>
+                </div>
+            </div>
+        </div>
+        <div class="parade-watermark scroll-highlight">48 MYTHMONS AWAIT</div>
+    </section>
+
+    <!-- Section 6: CTA -->
+    <section id="cta" class="section-cta">
+        <svg class="bg-column" viewBox="0 0 100 800" preserveAspectRatio="none">
+            <!-- Simplified Greek column representation -->
+            <rect x="20" y="0" width="60" height="800" fill="none" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+            <line x1="30" y1="0" x2="30" y2="800" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+            <line x1="40" y1="0" x2="40" y2="800" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+            <line x1="50" y1="0" x2="50" y2="800" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+            <line x1="60" y1="0" x2="60" y2="800" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+            <line x1="70" y1="0" x2="70" y2="800" stroke="rgba(201,146,42,0.05)" stroke-width="2"/>
+        </svg>
+        <div class="cta-content">
+            <div class="cta-eyebrow">YOUR MISSION</div>
+            <h2 class="cta-heading">
+                <div class="cta-line">Build your team.</div>
+                <div class="cta-line">Capture the legends.</div>
+                <div class="cta-line gold-text">Win the battle.</div>
+            </h2>
+            <p class="cta-body scroll-highlight">You have 500 Drachma. Spend it wisely. Study the data. Know your enemy's weaknesses. Only the sharpest mind will conquer all five trainers.</p>
+            <a href="#" class="btn-primary">ENTER THE MYTHMON WORLD &rarr;</a>
+            <div class="cta-stats">
+                <span>48 CHARACTERS</span> &middot; <span>5 TRAINERS</span> &middot; <span>500 DRACHMA</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

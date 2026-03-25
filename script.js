@@ -298,24 +298,18 @@ gsap.to('.cta-line', {
     gsap.set('.landing-gate__cta', { opacity: 0, y: 24 });
 
     const tlIn = gsap.timeline({ delay: 0.12 });
-    tlIn.to('.landing-gate__img', { scale: 1, duration: 2.6, ease: 'power2.out' }, 0)
-        .fromTo('.landing-gate__video', { opacity: 0 }, { opacity: 0.2, duration: 2.2, ease: 'power1.out' }, 0.2)
-        .to('.landing-gate__runes', { opacity: 0.95, duration: 1.4, ease: 'power2.out' }, 0.55)
+    tlIn.to('.landing-gate__runes', { opacity: 0.95, duration: 1.4, ease: 'power2.out' }, 0.25)
         .to('.landing-gate__cta', { opacity: 1, y: 0, duration: 0.85, ease: 'power2.out' }, 1.1);
-
-    gsap.to('.landing-gate__img', {
-        scale: 1.05,
-        duration: 14,
-        ease: 'sine.inOut',
-        yoyo: true,
-        repeat: -1,
-        delay: 2.8
-    });
 
     const landingRunes = gate.querySelector('.landing-gate__runes');
     const landingCtaInner = gate.querySelector('.landing-gate__cta-inner');
+    const landingVideo = gate.querySelector('.landing-gate__video');
     const greekGreeting = 'Χαίρετε, μαθηταὶ τοῦ Βισόπτων καὶ Ῥεδμαρσάλου';
     const englishGreeting = 'Welcome, students of Bishopton Redmarshall';
+    if (landingVideo) {
+        landingVideo.pause();
+        landingVideo.currentTime = 0;
+    }
 
     function dissolveGate() {
         gsap.timeline({
@@ -327,20 +321,39 @@ gsap.to('.cta-line', {
                 initHeroIntro();
             }
         })
-        .to('.landing-gate__content', { opacity: 0, y: -36, duration: 0.5 })
-        .to('.landing-gate__pillars', { opacity: 0, duration: 0.35 }, '-=0.35')
-        .to('.landing-gate__layers', {
-            opacity: 0,
-            scale: 1.14,
-            filter: 'blur(18px) brightness(1.5)',
-            duration: 1.05
-        }, '-=0.25');
+        .to('.landing-gate__content', { opacity: 0, y: -18, duration: 0.16 })
+        .to('#landing-gate', { backgroundColor: '#000000', duration: 0.32 }, '-=0.02')
+        .to('.landing-gate__layers', { opacity: 0, duration: 0.28 }, '-=0.22')
+        .to('#landing-gate', { opacity: 0, duration: 0.24 }, '>-0.02');
+    }
+
+    function playVideoThenExit() {
+        if (!landingVideo) {
+            dissolveGate();
+            return;
+        }
+
+        landingCtaInner.textContent = 'Entering...';
+        landingVideo.currentTime = 0;
+
+        const fallback = window.setTimeout(() => {
+            dissolveGate();
+        }, 5600);
+
+        landingVideo.onended = () => {
+            window.clearTimeout(fallback);
+            dissolveGate();
+        };
+
+        landingVideo.play().catch(() => {
+            window.clearTimeout(fallback);
+            dissolveGate();
+        });
     }
 
     function enterSite() {
         btn.disabled = true;
         tlIn.kill();
-        gsap.killTweensOf('.landing-gate__img');
 
         landingRunes.textContent = greekGreeting;
         landingCtaInner.textContent = 'Translation in progress';
@@ -357,11 +370,11 @@ gsap.to('.cta-line', {
         const totalWeight = charWeights.reduce((sum, w) => sum + w, 0);
 
         gsap.timeline({
-            onComplete: dissolveGate
+            onComplete: playVideoThenExit
         })
         .to(textState, {
             p: 1,
-            duration: 30,
+            duration: 11.5,
             ease: 'none',
             onUpdate: () => {
                 const targetWeight = textState.p * totalWeight;

@@ -35,6 +35,11 @@ body.landing-active {
     height: 100vh;
 }
 
+body.landing-cursor-hidden,
+body.landing-cursor-hidden * {
+    cursor: none !important;
+}
+
 /* ========== Landing gate — Enter Ancient Greece ========== */
 .landing-gate {
     position: fixed;

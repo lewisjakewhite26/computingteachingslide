@@ -304,14 +304,31 @@ gsap.to('.cta-line', {
     const landingRunes = gate.querySelector('.landing-gate__runes');
     const landingCtaInner = gate.querySelector('.landing-gate__cta-inner');
     const landingVideo = gate.querySelector('.landing-gate__video');
+    let cursorHideTimer = null;
     const greekGreeting = 'Χαίρετε, μαθηταὶ τοῦ Βισόπτων καὶ Ῥεδμαρσάλου';
     const englishGreeting = 'Welcome, students of Bishopton Redmarshall';
+    async function enterFullscreenIfPossible() {
+        const root = document.documentElement;
+        if (!root || document.fullscreenElement) return;
+        try {
+            if (root.requestFullscreen) {
+                await root.requestFullscreen({ navigationUI: 'hide' });
+            }
+        } catch (_) {
+            // Fullscreen can fail if blocked by browser policy; continue gracefully.
+        }
+    }
     if (landingVideo) {
         landingVideo.pause();
         landingVideo.currentTime = 0;
     }
 
     function dissolveGate() {
+        if (cursorHideTimer) {
+            window.clearTimeout(cursorHideTimer);
+            cursorHideTimer = null;
+        }
+        document.body.classList.remove('landing-cursor-hidden');
         gsap.timeline({
             defaults: { ease: 'power3.in' },
             onComplete: () => {
@@ -354,6 +371,9 @@ gsap.to('.cta-line', {
     function enterSite() {
         btn.disabled = true;
         tlIn.kill();
+        cursorHideTimer = window.setTimeout(() => {
+            document.body.classList.add('landing-cursor-hidden');
+        }, 5000);
 
         landingRunes.textContent = greekGreeting;
         landingCtaInner.textContent = 'Translation in progress';
@@ -404,6 +424,7 @@ gsap.to('.cta-line', {
     const enterSiteWrapped = () => {
         if (dismissed) return;
         dismissed = true;
+        enterFullscreenIfPossible();
         enterSite();
     };
 
